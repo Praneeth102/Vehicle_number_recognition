@@ -23,7 +23,7 @@ def number_plate(image):
        for x in num_plate:
          if x!=" ":
            fin_number += x
-       response = requests.get("http://www.regcheck.org.uk/api/reg.asmx/CheckIndia?RegistrationNumber={0}&username=praneeth".format(str(fin_number)))    
+       response = requests.get("http://www.regcheck.org.uk/api/reg.asmx/CheckIndia?RegistrationNumber={0}&username=<user_name>".format(str(fin_number)))    
        data_dict = xmltodict.parse(response.content)
        json_data = json.dumps(data_dict)
        resultnum=json.loads(json.loads(json_data)['Vehicle']['vehicleJson'])    
